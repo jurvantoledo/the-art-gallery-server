@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "database_development",
+    "database": "postgres://rlhbqoyv:7NJAj_MRI13tKzltLx7QMy5BqJzzLIuD@suleiman.db.elephantsql.com:5432/rlhbqoyv",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
