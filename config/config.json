@@ -1,10 +1,8 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "postgres://rlhbqoyv:7NJAj_MRI13tKzltLx7QMy5BqJzzLIuD@suleiman.db.elephantsql.com:5432/rlhbqoyv",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "url": "postgres://rlhbqoyv:7NJAj_MRI13tKzltLx7QMy5BqJzzLIuD@suleiman.db.elephantsql.com:5432/rlhbqoyv",
+    "dialect": "postgres",
+    "operatorsAliases": "0"
   },
   "test": {
     "username": "root",
