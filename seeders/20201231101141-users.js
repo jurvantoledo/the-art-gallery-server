@@ -18,6 +18,18 @@ module.exports = {
           imageUrl: "https://i.ytimg.com/vi/78_9EEEErZo/hqdefault.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
+        },
+        {
+          firstName: "dummy",
+          lastName: "dumbdumb",
+          email: "dummy@dumb.com",
+          phone: "+31 622222222",
+          password: bcrypt.hashSync("1234", SALT_ROUNDS),
+          country: "Germany",
+          city: "Berlin",
+          imageUrl: "https://i.kym-cdn.com/entries/icons/facebook/000/001/106/maxresdefault.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         }
       ]
     )
