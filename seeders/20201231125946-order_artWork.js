@@ -13,12 +13,6 @@ module.exports = {
         },
         {
           orderId: 2,
-          artWorkId: 1,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          orderId: 2,
           artWorkId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
