@@ -3,6 +3,7 @@ const corsMiddleware = require("cors")
 const authRouter = require("./routers/auth")
 const galleryRouter = require("./routers/gallery")
 const orderRouter = require("./routers/order")
+const artWorkRouter = require("./routers/artWork")
 const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 4000;
 
@@ -22,6 +23,7 @@ if (process.env.DELAY) {
   app.use("/", authRouter);
   app.use("/gallery", galleryRouter)
   app.use("/order", orderRouter)
+  app.use("/work", artWorkRouter)
 
 // default is port 4000
   app.listen(PORT, () => {
