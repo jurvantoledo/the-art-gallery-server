@@ -16,7 +16,7 @@ module.exports = {
         {
           name: "Dummy's not so awesome artwork",
           image: "https://cdn.getyourguide.com/img/tour/5afd36c552979.jpeg/146.jpg",
-          description: "awesome art I made",
+          description: "awesome art someone made",
           galleryId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
