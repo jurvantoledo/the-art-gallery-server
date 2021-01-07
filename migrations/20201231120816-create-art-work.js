@@ -20,6 +20,10 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNul: false
       },
+      price: {
+        type: Sequelize.STRING,
+        allowNul: false
+      },
       galleryId: {
         type: Sequelize.INTEGER,
         references: {
