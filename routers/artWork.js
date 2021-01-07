@@ -16,4 +16,20 @@ router.get("/", async (req, res, next) => {
     }
 })
 
+router.delete("/:id", async (req, res) => {
+    try {
+      const galleryId = req.params.id
+      const toDelete = await ArtWork.findByPk(galleryId)
+
+      if(!toDelete) {
+        res.status(404).send("art work not found")
+      }
+  
+      const deleted = await toDelete.destroy()
+      res.json(deleted)
+    } catch (error) {
+      next(error)
+    }
+  })
+
 module.exports = router;

@@ -38,4 +38,32 @@ router.get("/:id", async (req, res) => {
     res.status(200).send({ message: "ok", galleries });
   });
 
+  router.post("/:id", async (req, res, next) => {
+    try {
+    const gallery = await Gallery.findByPk(req.params.id);
+    console.log(gallery);
+  
+    const { name, image, description, price } = req.body;
+    if 
+    (!name || !description || !image || !price) 
+    {
+      return res.status(400).send(
+        "Please make sure everything is filled in right."
+        );
+    }
+  
+      const newArtWork = await ArtWork.create({
+        name,
+        description,
+        image,
+        price,
+        galleryId: gallery.id,
+      });
+      
+      res.status(201).send({ message: "art created", ...newArtWork.dataValues });
+    } catch (error) {
+        next(error)
+      }
+  });
+
 module.exports = router;
