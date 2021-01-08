@@ -35,20 +35,20 @@ router.post("/login", async (req, res, next) => {
 });
 
 router.post("/signup", async (req, res) => {
-  const { email, password, firstName, lastName, country, city, phone, imageUrl } = req.body;
+  const { firstName, lastName, email, phone, password, city, country, imageUrl } = req.body;
   if (!email || !password || !firstName || !lastName || !country || !city || !phone || !imageUrl) {
     return res.status(400).send("Please provide an email, password and a name");
   }
 
   try {
     const newUser = await User.create({
-      email,
-      password: bcrypt.hashSync(password, SALT_ROUNDS),
       firstName,
       lastName, 
-      country,
-      city,
+      email,
       phone,
+      password: bcrypt.hashSync(password, SALT_ROUNDS),
+      city,
+      country,
       imageUrl
     });
 
