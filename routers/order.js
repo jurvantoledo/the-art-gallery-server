@@ -29,7 +29,7 @@ router.get("/:id", async (req, res, next) => {
             {
             model: ArtWork,
             include: [{ model: Gallery, attributes: ["name"] }],
-            attributes: ["name"],
+            attributes: ["name", "image"],
             },
             User
         ],
