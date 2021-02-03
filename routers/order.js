@@ -58,7 +58,7 @@ router.post("/", async (req, res, next) => {
     }
   
       const newOrderArtWork = await OrderArtWork.create({
-        orderId: newOrder.id,
+        orderId: userId,
         artWorkId,
       });
       
