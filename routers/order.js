@@ -44,19 +44,25 @@ router.post("/", async (req, res, next) => {
     try {
       // userId
       // what he's ordering? [1, 3, 7] = productsIds
-      const { userId, artWorkIds } = req.body;
+      const { userId, artWorkId } = req.body;
       console.log(req.body);
       const newOrder = await Order.create({ userId });
       // tying together this new order with the products it needs.
   
-      const newOrderArtWorks = artWorkIds.map(
-        async id =>
-          await OrderArtWork.create({ artWorkId: id, orderId: newOrder.id })
-      ); // [Promise, Promise, Promise]
+    if 
+    (!artWorkId) 
+    {
+      return res.status(400).send(
+        "Please make sure everything is filled in right."
+        );
+    }
   
-      await Promise.all(newOrderArtWorks);
-  
-      res.send(newOrder);
+      const newOrderArtWork = await OrderArtWork.create({
+        orderId: newOrder.id,
+        artWorkId,
+      });
+      
+      res.status(201).send({ message: "order created", ...newOrderArtWork.dataValues });
     } catch (e) {
       next(e);
     }
