@@ -48,6 +48,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING, 
       allowNull: false 
     },
+    hasGallery: { 
+      type: DataTypes.BOOLEAN, 
+      allowNull: false 
+    },
   }, {
     sequelize,
     modelName: 'user',

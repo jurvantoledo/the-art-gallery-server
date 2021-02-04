@@ -14,8 +14,8 @@ module.exports = {
           updatedAt: new Date(),          
         },
         {
-          name: "Artsy For You",
-          description: "An awesome gallery from Dummy DumbDumb",
+          name: "Art For You",
+          description: "An awesome gallery from Bob located in Germany, Berlin",
           imageUrl: "https://images.pexels.com/photos/4503762/pexels-photo-4503762.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
           userId: 2,
           createdAt: new Date(),
