@@ -3,6 +3,7 @@ const { Router } = require("express");
 const { toJWT } = require("../auth/jwt");
 const authMiddleware = require("../auth/middleware");
 const User = require("../models/").user;
+const Gallery = require("../models").gallery
 const { SALT_ROUNDS } = require("../config/constants");
 
 const router = new Router();
@@ -63,6 +64,35 @@ router.post("/signup", async (req, res) => {
       return res
         .status(400)
         .send({ message: "There is an existing account with this email" });
+    }
+
+    return res.status(400).send({ message: "Something went wrong, sorry" });
+  }
+});
+
+router.post("/:id", async (req, res) => {
+
+  const user = await User.findByPk(req.params.id);
+
+  const { name, description, imageUrl } = req.body;
+  if (!name || !description || !imageUrl) {
+    return res.status(400).send("Please provide an name, description and a image");
+  }
+
+  try {
+    const newGallery = await Gallery.create({
+      name,
+      description, 
+      imageUrl,
+      userId: user.id
+    });
+
+    res.status(201).send({ message: "Gallery created", ...newGallery.dataValues });
+  } catch (error) {
+    if (error.name === "SequelizeUniqueConstraintError") {
+      return res
+        .status(400)
+        .send({ message: "There is an existing gallery with this name" });
     }
 
     return res.status(400).send({ message: "Something went wrong, sorry" });
