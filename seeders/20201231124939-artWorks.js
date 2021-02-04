@@ -15,7 +15,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          name: "Dummy's really awesome artwork",
+          name: "Bob's really awesome artwork",
           image: "https://cdn.getyourguide.com/img/tour/5afd36c552979.jpeg/146.jpg",
           description: "awesome art someone made",
           price: "9,99",
@@ -24,7 +24,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          name: "Dummy's Beautiful artwork",
+          name: "Bob's Beautiful artwork",
           image: "https://images.pexels.com/photos/1964471/pexels-photo-1964471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
           description: "awesome art someone made",
           price: "19,99",
